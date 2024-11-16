@@ -24,6 +24,10 @@ db-int: db-interactive
 db-interactive:
 	@docker-compose up
 
+db-mig: db-migrate
+db-migrate:
+	@dotnet ef database update
+
 db-down: database-down
 database-down:
 	@docker-compose down
