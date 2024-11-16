@@ -1,0 +1,27 @@
+@model ContiNet.DTOs.ContinentDTO
+
+<h1>Continent Details</h1>
+<div>
+  <h2>@Model.Name</h2>
+  <p><strong>Total Population:</strong> @Model.Population</p>
+  @if (Model.Countries.Count > 0)
+  {
+  <details>
+    <summary>Countries</summary>
+    <ul>
+      @foreach (var country in Model.Countries)
+      {
+      <li>@country.Name</li>
+      }
+    </ul>
+  </details>
+  }
+  else
+  {
+  <p><strong>This continent has no countries</strong></p>
+  }
+</div>
+
+<a href="@Url.Action("Edit", "Continent" , new { id=Model.Id })">Edit</a> |
+<a href="@Url.Action("Delete", "Continent" , new { id=Model.Id })">Delete</a> |
+<a href="@Url.Action("Index", "Continent" )">Back to List</a>

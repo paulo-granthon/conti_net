@@ -1,0 +1,29 @@
+@model IEnumerable<ContiNet.DTOs.CountryDTO>
+
+  <h1>Countries</h1>
+  <a href="/Country/Create">Create New</a>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Continent</th>
+        <th>Population</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var country in Model)
+      {
+      <tr>
+        <td>@country.Name</td>
+        <td>@country.ContinentName</td>
+        <td>@country.Population</td>
+        <td>
+          <a href="/Country/Details/@country.Id">Details</a> |
+          <a href="/Country/Edit/@country.Id">Edit</a> |
+          <a href="/Country/Delete/@country.Id">Delete</a>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>

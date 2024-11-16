@@ -1,0 +1,26 @@
+@model IEnumerable<ContiNet.DTOs.ContinentDTO>
+
+  <h1>Continents</h1>
+  <a href="/Continent/Create">Create New</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var continent in Model)
+      {
+      <tr>
+        <td>@continent.Name</td>
+        <td>@continent.Population</td>
+        <td>
+          <a href="/Continent/Details/@continent.Id">Details</a> |
+          <a href="/Continent/Edit/@continent.Id">Edit</a> |
+          <a href="/Continent/Delete/@continent.Id">Delete</a>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>

@@ -1,0 +1,14 @@
+@model ContiNet.DTOs.ContinentDTO
+
+<h1>Create New Continent</h1>
+
+<form asp-action="Create" method="post">
+  @Html.AntiForgeryToken()
+  <div>
+    <label for="Name">Name</label>
+    <input type="text" id="Name" name="Name" required />
+  </div>
+  <button type="submit">Create</button>
+</form>
+
+<a href="@Url.Action("Index", "Continent" )">Back to List</a>

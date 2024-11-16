@@ -1,0 +1,11 @@
+@model ContiNet.DTOs.CountryDTO
+
+<h1>Delete Country</h1>
+
+<p>Are you sure you want to delete the country <strong>@Model.Name</strong>?</p>
+
+<form method="post">
+  @Html.AntiForgeryToken()
+  <button type="submit" class="btn btn-danger">Delete</button>
+  <a href="@Url.Action("Index", "Country" )" class="btn btn-secondary">Cancel</a>
+</form>

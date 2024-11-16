@@ -1,0 +1,13 @@
+@model ContiNet.DTOs.CountryDTO
+
+<h1>Country Details</h1>
+<div>
+  <h2>@Model.Name</h2>
+  <p><strong>Continent:</strong> @Model.ContinentName</p>
+  <p><strong>Population:</strong> @Model.Population</p>
+</div>
+
+<p>
+  <a href="@Url.Action("Edit", "Country" , new { id=Model.Id })">Edit</a> |
+  <a href="@Url.Action("Index", "Country" )">Back to List</a>
+</p>

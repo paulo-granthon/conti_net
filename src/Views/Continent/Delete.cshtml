@@ -1,0 +1,13 @@
+@model ContiNet.DTOs.ContinentDTO
+
+<h1>Delete Continent</h1>
+
+<p>Are you sure you want to delete the continent: @Model.Name?</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+  @Html.AntiForgeryToken()
+  <input type="hidden" asp-for="Id" />
+  <button type="submit">Yes, Delete</button>
+</form>
+
+<a href="@Url.Action("Index", "Continent" )">Cancel</a>
