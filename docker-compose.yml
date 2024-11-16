@@ -1,0 +1,21 @@
+# conti.NETs
+services:
+  sql-server:
+    image: mcr.microsoft.com/mssql/server
+    container_name: mssql-server
+    user: "0:0"
+    environment:
+      SA_USERNAME: sa
+      SA_PASSWORD: 8charPWD
+      ACCEPT_EULA: Y
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./sql:/sql
+      - ./tmp_db_data:/var/opt/mssql/data
+    networks:
+      - mssql_server_network
+
+networks:
+  mssql_server_network:
+    driver: bridge
