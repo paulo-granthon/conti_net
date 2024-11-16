@@ -11,6 +11,9 @@ builder
     }
   );
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -21,4 +24,5 @@ app.MapControllerRoute(
   pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 
+app.MapControllers();
 app.Run();
