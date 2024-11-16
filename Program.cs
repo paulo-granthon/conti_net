@@ -14,6 +14,9 @@ builder
 
 Env.Load();
 
+builder.Services.AddScoped<CountryService>();
+builder.Services.AddScoped<ContinentService>();
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers();
