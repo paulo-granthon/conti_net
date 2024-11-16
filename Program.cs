@@ -1,4 +1,9 @@
 using DotNetEnv;
+using Microsoft.EntityFrameworkCore;
+using ContiNet.Models;
+using Microsoft.OpenApi.Models;
+using ContiNet.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder
@@ -44,10 +49,33 @@ builder.Services.AddScoped<ContinentService>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+  c.SwaggerDoc("v1", new OpenApiInfo { Title = "Country API", Version = "v1" });
+});
 
 var app = builder.Build();
 
+if (app.Environment.IsDevelopment())
+{
+  app.UseSwagger();
+  app.UseSwaggerUI(c =>
+  {
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Country API v1");
+  });
+}
+
+if (!app.Environment.IsDevelopment())
+{
+  app.UseExceptionHandler("/Home/Error");
+  app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseRouting();
+app.UseAuthorization();
 
 app.MapControllerRoute(
   name: "default",
