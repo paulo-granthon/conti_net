@@ -1,3 +1,4 @@
+using DotNetEnv;
 var builder = WebApplication.CreateBuilder(args);
 
 builder
@@ -10,6 +11,8 @@ builder
       options.ViewLocationFormats.Add("/src/Views/Shared/{0}.cshtml");
     }
   );
+
+Env.Load();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
