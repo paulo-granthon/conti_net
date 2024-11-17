@@ -121,6 +121,10 @@ src/.vs/config/applicationhost.config
 tmp_db_data/*
 !tmp_db_data/.persist
 
+# npm and tailwind reated files
+node_modules/
+wwwroot/css/output.css
+
 .env
 
 *.pdf
