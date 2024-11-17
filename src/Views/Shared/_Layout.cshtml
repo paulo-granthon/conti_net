@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@ViewData["Title"] - Conti.NET</title>
+  <link rel="stylesheet" href="~/css/output.css" />
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="h-screen flex flex-col items-center justify-start bd-white text-cyan-500 w-screen">
+  <header class="text-left mb-2 w-screen">
+    @Html.Partial("_ContiNetLogo", false)
+  </header>
+
+  <main class="text-center w-full">
+    @RenderBody()
+  </main>
+
+  <footer class="mt-12 text-gray-700 text-sm">
+    <div class="text-left w-screen">
+      @Html.Partial("_ContiNetLogo", true)
+    </div>
+    © 2024 Conti.NET. All rights reserved.
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 .PHONY: all help \
-  run b build \
+	b build run dev \
 	db-up database-up \
 	db-int db-interactive \
 	db-down database-down

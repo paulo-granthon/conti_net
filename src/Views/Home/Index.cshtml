@@ -1,20 +1,21 @@
-<html>
+@{
+Layout = "~/src/Views/Shared/_Layout.cshtml";
+}
 
-<head>
-  <title>Conti.NET</title>
-</head>
+<div class="text-center w-full">
+  <div>
+    <h2 class="text-xl font-medium mb-4 text-cyan-700">Continents and Countries API in .NET</h2>
+    <p class="text-3xl font-bold text-cyan-1000 max-w-xl mx-auto">
+      API providing information about continents and countries.
+    </p>
+  </div>
 
-<body>
-  <h1>Conti.NET,</h1>
-  <h2>continents and countries API in .NET</h2>
-  <p>
-    This is a simple API that provides information about continents and countries.
-  </p>
-  <h2>Explore</h2>
-  <ul>
-    <ul><a href="/Continent">Continents</a></ul>
-    <ul><a href="/Country">Countries</a></ul>
-  </ul>
-</body>
 
-</html>
+  <div class="my-12 py-12 bg-cyan-200">
+    <h2 class="text-3xl font-semibold mb-8 text-cyan-1000">Explore</h2>
+    <ul class="flex flex-col gap-4">
+      @Html.Partial("_ExploreLink", ("/Continent", "Continents", "Operations over continents"))
+      @Html.Partial("_ExploreLink", ("/Country", "Countries", "Operations over countries"))
+    </ul>
+  </div>
+</div>
