@@ -1,6 +1,6 @@
 @model (string Url, string Label, string? Description)
 
-<a href="@Model.Url" class="px-6 py-3 mx-3 bg-cyan-100 hover:opacity-90 rounded-xl font-bold text-cyan-600 transition">
+<a href="@Model.Url" class="px-6 py-3 mx-3 bg-cyan-100 hover:opacity-90 rounded-xl font-bold text-cyan-600 transition w-full max-w-screen-xl">
   @Model.Label
   <p class="text-sm text-gray-700 font-medium">@Model.Description</p>
 </a>

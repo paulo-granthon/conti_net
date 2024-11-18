@@ -3,17 +3,20 @@ Layout = "~/src/Views/Shared/_Layout.cshtml";
 }
 
 <div class="text-center w-full">
-  <div>
+  <div class="relative z-50">
     <h2 class="text-xl font-medium mb-4 text-cyan-700">Continents and Countries API in .NET</h2>
     <p class="text-3xl font-bold text-cyan-1000 max-w-xl mx-auto">
       API providing information about continents and countries.
     </p>
   </div>
 
+  <div class="-mt-12">
+    @Html.Partial("_Carousel")
+  </div>
 
-  <div class="my-12 py-12 bg-cyan-200">
-    <h2 class="text-3xl font-semibold mb-8 text-cyan-1000">Explore</h2>
-    <ul class="flex flex-col gap-4">
+  <div class="my-12 py-12 bg-cyan-200 w-full">
+    <h2 class="text-3xl font-semibold mb-8 text-cyan-1000 w-full">Explore</h2>
+    <ul class="flex flex-col items-center gap-4 w-full">
       @Html.Partial("_ExploreLink", ("/Continent", "Continents", "Operations over continents"))
       @Html.Partial("_ExploreLink", ("/Country", "Countries", "Operations over countries"))
     </ul>

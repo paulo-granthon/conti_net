@@ -1,26 +1,26 @@
 @model IEnumerable<ContiNet.DTOs.ContinentDTO>
+  @{
+  Layout = "~/src/Views/Shared/_Layout.cshtml";
+  }
 
-  <h1>Continents</h1>
-  <a href="/Continent/Create">Create New</a>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="flex justify-evenly gap-36 w-full max-w-screen-xl">
+    <p class="text-left text-3xl font-bold text-cyan-1000">Continents</p>
+    <a class="bg-cyan-1000 text-white px-4 py-2 rounded-md hover:bg-cyan-900" href="/Continent/Create">Create New</a>
+  </div>
+  <div class="flex justify-center items-center bg-cyan-200 w-full w-max-screen-xl m-2 mb-12">
+    <div class="grid justify-center grid-cols-[20%_12%_24%] gap-12 gap-y-2 m-12 w-full">
+      <div class="text-left">Name</div>
+      <div class="text-center">Population</div>
+      <div class="text-center">Actions</div>
       @foreach (var continent in Model)
       {
-      <tr>
-        <td>@continent.Name</td>
-        <td>@continent.Population</td>
-        <td>
-          <a href="/Continent/Details/@continent.Id">Details</a> |
-          <a href="/Continent/Edit/@continent.Id">Edit</a> |
-          <a href="/Continent/Delete/@continent.Id">Delete</a>
-        </td>
-      </tr>
+      <div class="text-left text-2xl font-bold text-gray-700 mb-2">@continent.Name</div>
+      <div class="text-center text-xl font-bold text-gray-700 mb-2">@continent.Population</div>
+      <div class="flex flex-row justify-center items-center gap-4 mb-2">
+        @Html.Partial("_Details", $"Continent/Details/{@continent.Id}")
+        @Html.Partial("_Edit", $"Continent/Edit/{@continent.Id}")
+        @Html.Partial("_Delete", $"Continent/Delete/{@continent.Id}")
+      </div>
       }
-    </tbody>
-  </table>
+    </div>
+  </div>
