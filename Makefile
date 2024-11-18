@@ -12,6 +12,9 @@ help:
 run:
 	@dotnet watch run --project conti_net.csproj
 
+dev:
+	@npm run dev
+
 b: build
 build:
 	@dotnet build
